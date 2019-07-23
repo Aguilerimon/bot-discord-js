@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/Aguilerimon/furrobot-bot-discord#readme",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "ffmpeg-binaries": "^4.0.0",
+    "node-opus": "^0.3.2",
+    "ytdl-core": "^0.29.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
