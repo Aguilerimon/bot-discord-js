@@ -52,6 +52,11 @@ client.on('message', message =>{
             },
 
             {
+                name: 'uwu. server',
+                value: 'Muestra un resumen del servidor.'
+            },
+
+            {
                 name: 'uwu. yt [URL DE YOUTUBE]',
                 value: 'Reproduce el audio del video seleccionado.'
             }],
@@ -93,6 +98,22 @@ client.on('message', message =>{
             else {
                 message.reply('Debes estar en un canal de audio!');
             }
+        break;
+
+        case 'server':
+          var server = message.guild;
+          const embed = new Discord.RichEmbed()
+            .setThumbnail(server.iconURL) //Icono del servidor
+            //.setAuthor(server.name, server.iconURL) //Opcional
+            .addField('ID', server.id, true) //Campo ID
+            .addField('Region', server.region, true) //Campo Region
+            .addField('Creado el', server.joinedAt.toDateString(), true) //Fecha de creacion
+            .addField('Dueño del servidor', server.owner.user.tag+' ('+server.owner.user.id+')', true)
+            .addField('Miembros', server.memberCount, true) //Numero de miembros
+            .addField('Roles', server.roles.size, true) //Roles activos
+            .setColor(0x66b3ff) //Color del mensaje
+
+            message.channel.send(embed);
         break;
     }
 });
