@@ -14,7 +14,7 @@ client.on("ready", () =>{
     client.user.setPresence({
         status: 'online',
         game: {
-            name: 'uwu. help | Lolsito',
+            name: 'uwu. help | Git',
             type: 'PLAYING'
         }
     });
