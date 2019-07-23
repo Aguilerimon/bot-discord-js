@@ -29,7 +29,7 @@ client.on('message', message =>{
             //Llamado a un mensaje de canal de tipo embed
             message.channel.send({embed:{
                 color: 3447003,
-                description: ':ping_pong: Pong!'
+                description: ':ping_pong: Pong pong!'
             }});
         break;
 
@@ -44,13 +44,13 @@ client.on('message', message =>{
             fields: [{
                 name: 'uwu. help',
                 value: 'Devuelve los comandos disponibles de FurroBot.'
-            
+
             },
             {
                 name: 'uwu. ping',
                 value: 'Devuelve una respuesta pong.'
             },
-        
+
             {
                 name: 'uwu. yt [URL DE YOUTUBE]',
                 value: 'Reproduce el audio del video seleccionado.'
@@ -60,12 +60,12 @@ client.on('message', message =>{
 
             footer:{
                 icon_url: client.user.avatarURL,
-                text: "github.com/Aguilerimon/furrobot-bot-discord"     
+                text: "github.com/Aguilerimon/furrobot-bot-discord"
             }
            }});
         break;
 
-        case 'yt': 
+        case 'yt':
             if (!message.guild) return;
             if(!args[0]) return message.channel.send('Ingrese un enlace de youtube para poder reproducirlo.');
             //Valida si el usuario esta conectado en un canal de discord
@@ -89,7 +89,7 @@ client.on('message', message =>{
             if (message.member.voiceChannel) {
                 message.member.voiceChannel.leave(); //Funcion leave() que desconecta al bot del canal de audio
                 message.reply('Adios!!'); //Mensaje de despedida
-            } 
+            }
             else {
                 message.reply('Debes estar en un canal de audio!');
             }
