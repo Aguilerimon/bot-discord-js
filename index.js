@@ -57,6 +57,11 @@ client.on('message', message =>{
             },
 
             {
+                name: 'uwu. invitacion',
+                value: 'Genera la URL de invitacion al servidor.'
+            },
+
+            {
                 name: 'uwu. yt [URL DE YOUTUBE]',
                 value: 'Reproduce el audio del video seleccionado.'
             }],
@@ -98,6 +103,15 @@ client.on('message', message =>{
             else {
                 message.reply('Debes estar en un canal de audio!');
             }
+        break;
+
+        case 'invitacion':
+          var id = message.channel.id;
+          message.guild.channels.get(id).createInvite({
+            maxAge: 0
+          }).then(invite =>
+            message.channel.send(invite.url)
+          );
         break;
 
         case 'server':
