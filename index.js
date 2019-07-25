@@ -26,10 +26,11 @@ client.on('message', message =>{
 
     switch(comando){
         case 'ping':
+            let ping = Math.floor(message.client.ping);
             //Llamado a un mensaje de canal de tipo embed
             message.channel.send({embed:{
                 color: 3447003,
-                description: ':ping_pong: Pong pong!'
+                description: ':ping_pong: Pong!, '+ ping +' ms'
             }});
         break;
 
@@ -48,7 +49,7 @@ client.on('message', message =>{
             },
             {
                 name: 'uwu. ping',
-                value: 'Devuelve una respuesta pong.'
+                value: 'Devuelve el resultado del ping al servidor.'
             },
 
             {
